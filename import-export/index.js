@@ -19,8 +19,14 @@ const PASSENGER_INFO = [
   },
 ];
 
+function renderSinglePassengerInfo({ personName, surname }) {
+  return {
+    "Imię i nazwisko": `${personName} ${surname}`,
+  };
+}
+
 function renderPassengerInfo(passengerInfo) {
-  return console.table(passengerInfo);
+  return console.table(passengerInfo.map(renderSinglePassengerInfo));
 }
 
 renderPassengerInfo(PASSENGER_INFO);
