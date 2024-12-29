@@ -1,4 +1,5 @@
 import dateFunctions from "./utils/dateUtils.mjs";
+import aircraftinfo from "./utils/aircraftinfo.mjs";
 
 const PASSENGER_INFO = [
   {
@@ -21,17 +22,6 @@ const PASSENGER_INFO = [
   },
 ];
 
-const SEAT_DESIGNATION_MAPPING = {
-  A: "Okno",
-  B: "Środek",
-  C: "Alejka",
-  D: "Alejka",
-  E: "Środek",
-  F: "Okno",
-};
-
-const AIRCRAFT_MAPPING = ["Airbus", "Boeing"];
-
 function renderSinglePassengerInfo({
   personName,
   surname,
@@ -45,8 +35,8 @@ function renderSinglePassengerInfo({
     "Imię i nazwisko": `${personName} ${surname}`,
     Wiek: dateFunctions.calculateAge(birthday),
     "Dni do wylotu": dateFunctions.daysToDeparture(flightDate),
-    Miejsce: `${seat}${seatDesignation} (${SEAT_DESIGNATION_MAPPING[seatDesignation]})`,
-    "Typ samolotu": AIRCRAFT_MAPPING[aircraftManufacturer],
+    Miejsce: `${seat}${seatDesignation} (${aircraftinfo.SEAT_DESIGNATION_MAPPING[seatDesignation]})`,
+    "Typ samolotu": aircraftinfo.AIRCRAFT_MAPPING[aircraftManufacturer],
   };
 }
 
