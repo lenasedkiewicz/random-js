@@ -1,3 +1,5 @@
+import calculateAge from "./utils/dateUtils";
+
 const PASSENGER_INFO = [
   {
     personName: "Kacper",
@@ -18,11 +20,6 @@ const PASSENGER_INFO = [
     aircraftManufacturer: 1,
   },
 ];
-
-function calculateAge(birthday) {
-  const now = new Date();
-  return now.getFullYear() - birthday.getFullYear();
-}
 
 function renderSinglePassengerInfo({ personName, surname, birthday }) {
   return {
