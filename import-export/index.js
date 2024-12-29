@@ -19,9 +19,15 @@ const PASSENGER_INFO = [
   },
 ];
 
-function renderSinglePassengerInfo({ personName, surname }) {
+function calculateAge(birthday) {
+  const now = new Date();
+  return now.getFullYear() - birthday.getFullYear();
+}
+
+function renderSinglePassengerInfo({ personName, surname, birthday }) {
   return {
     "Imię i nazwisko": `${personName} ${surname}`,
+    Wiek: calculateAge(birthday),
   };
 }
 
