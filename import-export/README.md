@@ -11,3 +11,11 @@ Run file in Node using command <code>node index.js</code>
 ![alt text](image.png)
 
 ## Finished exercise
+
+Via Node:
+
+![alt text](image-1.png)
+
+Via browser:
+
+![alt text](image-2.png)
