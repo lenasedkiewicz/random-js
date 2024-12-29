@@ -21,16 +21,27 @@ const PASSENGER_INFO = [
   },
 ];
 
+const SEAT_DESIGNATION_MAPPING = {
+  A: "Okno",
+  B: "Środek",
+  C: "Alejka",
+  D: "Alejka",
+  E: "Środek",
+  F: "Okno",
+};
 function renderSinglePassengerInfo({
   personName,
   surname,
   birthday,
   flightDate,
+  seat,
+  seatDesignation,
 }) {
   return {
     "Imię i nazwisko": `${personName} ${surname}`,
     Wiek: dateFunctions.calculateAge(birthday),
     "Dni do wylotu": dateFunctions.daysToDeparture(flightDate),
+    Miejsce: `${seat}${seatDesignation} (${SEAT_DESIGNATION_MAPPING[seatDesignation]})`,
   };
 }
 
