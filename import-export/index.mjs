@@ -1,4 +1,4 @@
-import calculateAge from "./utils/dateUtils";
+import calculateAge from "./utils/dateUtils.mjs";
 
 const PASSENGER_INFO = [
   {
