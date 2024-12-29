@@ -1,6 +1,4 @@
-import calculateAge, {
-  daysToDeparture as daysToFlight,
-} from "./utils/dateUtils.mjs";
+import dateFunctions from "./utils/dateUtils.mjs";
 
 const PASSENGER_INFO = [
   {
@@ -31,8 +29,8 @@ function renderSinglePassengerInfo({
 }) {
   return {
     "Imię i nazwisko": `${personName} ${surname}`,
-    Wiek: calculateAge(birthday),
-    "Dni do wylotu": daysToFlight(flightDate),
+    Wiek: dateFunctions.calculateAge(birthday),
+    "Dni do wylotu": dateFunctions.daysToDeparture(flightDate),
   };
 }
 
