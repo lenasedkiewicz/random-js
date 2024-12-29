@@ -1,5 +1,4 @@
-import dateFunctions from "./utils/dateUtils.mjs";
-import aircraftinfo from "./utils/aircraftinfo.mjs";
+import renderPassengerInfo from "./utils/renderer.mjs";
 
 const PASSENGER_INFO = [
   {
@@ -38,10 +37,6 @@ function renderSinglePassengerInfo({
     Miejsce: `${seat}${seatDesignation} (${aircraftinfo.SEAT_DESIGNATION_MAPPING[seatDesignation]})`,
     "Typ samolotu": aircraftinfo.AIRCRAFT_MAPPING[aircraftManufacturer],
   };
-}
-
-function renderPassengerInfo(passengerInfo) {
-  return console.table(passengerInfo.map(renderSinglePassengerInfo));
 }
 
 renderPassengerInfo(PASSENGER_INFO);
