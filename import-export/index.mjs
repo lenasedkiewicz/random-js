@@ -29,6 +29,9 @@ const SEAT_DESIGNATION_MAPPING = {
   E: "Środek",
   F: "Okno",
 };
+
+const AIRCRAFT_MAPPING = ["Airbus", "Boeing"];
+
 function renderSinglePassengerInfo({
   personName,
   surname,
@@ -36,12 +39,14 @@ function renderSinglePassengerInfo({
   flightDate,
   seat,
   seatDesignation,
+  aircraftManufacturer,
 }) {
   return {
     "Imię i nazwisko": `${personName} ${surname}`,
     Wiek: dateFunctions.calculateAge(birthday),
     "Dni do wylotu": dateFunctions.daysToDeparture(flightDate),
     Miejsce: `${seat}${seatDesignation} (${SEAT_DESIGNATION_MAPPING[seatDesignation]})`,
+    "Typ samolotu": AIRCRAFT_MAPPING[aircraftManufacturer],
   };
 }
 
